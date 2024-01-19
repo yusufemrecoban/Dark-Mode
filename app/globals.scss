@@ -1,0 +1,133 @@
+/* Renk Değişkenleri */
+$slate-50: #f8fafc;      // Çok açık gri
+$slate-100: #f1f5f9;     // Açık gri
+$slate-200: #e2e8f0;     // Gri
+$slate-300: #cbd5e1;     // Orta gri
+$slate-400: #94a3b8;     // Gri mavi
+$slate-500: #64748b;     // Orta mavi gri
+$slate-600: #475569;     // Koyu mavi gri
+$slate-700: #334155;     // Lacivert gri
+$slate-800: #1e293b;     // Koyu mavi
+$slate-900: #0f172a;     // Çok koyu mavi
+$slate-950: #020617;     // Neredeyse siyah
+
+/* Root (Kök) Elemanı */
+:root {
+  background-color: white;   // Varsayılan arka plan rengi
+  color: $slate-950;         // Varsayılan metin rengi
+
+  &.dark {
+    background-color: $slate-950;  // Koyu tema arka plan rengi
+    color: $slate-100;             // Koyu tema metin rengi
+  }
+}
+
+/* Düğme Konteyneri */
+.button-container {
+  display: flex;
+  justify-content: flex-end;  // Sağ üst köşeye yerleştirme
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Anahtar Düğme */
+.toggle-button {
+  margin-left: 10px;
+  border-radius: 999px;       // Yuvarlatılmış köşeler
+  padding: 0.75rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  margin: auto;
+  cursor: pointer;
+
+  .icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: white;
+  }
+}
+
+/* Gri Mod Düğmesi */
+.light-gray-mode-button {
+  margin-left: 10px;
+  border-radius: 999px;
+  padding: 0.75rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  margin: auto;
+  cursor: pointer;
+}
+
+/* Ana Konteyner */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;         // Ekran yüksekliği kadar minimum yükseklik
+}
+
+/* İçerik */
+.content {
+  margin: auto;
+  max-width: 80rem;          // Maksimum genişlik
+  text-align: center;
+}
+
+/* Başlık */
+.title {
+  margin: 1.5rem 0;
+  font-weight: 600;          // Kalın yazı tipi
+}
+
+/* Kutu */
+.box {
+  border: 1px solid rgb(var(--box-border-rgb));
+  padding: 20px;
+  margin: 20px 0;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+
+  &.dark {
+    color: white;            // Koyu tema metin rengi
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);  // Koyu tema gölgesi
+  }
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);  // Hover durumunda gölge
+  }
+
+  &.light {
+    background-color: white;   // Açık tema arka plan rengi
+    color: $slate-800;         // Açık tema metin rengi
+  }
+
+  &.light:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);  // Hover durumunda gölge
+  }
+
+  &.light-gray-mode {
+    &.dark {
+      background-color: #1b263b;  // Gri tema arka plan rengi
+      color: white;               // Gri tema metin rengi
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);  // Gri tema gölgesi
+    }
+
+    &.light {
+      background-color: #415a77;  // Gri açık tema arka plan rengi
+      color: black;               // Gri açık tema metin rengi
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);  // Gri açık tema gölgesi
+    }
+
+    &:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);  // Hover durumunda gölge
+    }
+  }
+}
